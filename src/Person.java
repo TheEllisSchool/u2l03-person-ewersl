@@ -5,6 +5,7 @@ public class Person {
 	//attributes
 	private Color eyeColor; 
 	private Color hairColor;
+	private Color dressColor; 
 	private int height; 
 	private int x; //top of body
 	private int y; //top of body
@@ -12,9 +13,10 @@ public class Person {
 	// methods 
 	
 	//constructor 
-	public Person (Color ec, Color hc, int h, int xin, int yin) {
+	public Person (Color ec, Color hc, Color dc, int h, int xin, int yin) {
 		eyeColor = ec; 
-		hairColor = hc; 
+		hairColor = hc;
+		dressColor= dc; 
 		height = h;
 		x= xin; 
 		y = yin;
@@ -42,7 +44,13 @@ public class Person {
 		//eyes
 		g.setColor(eyeColor);
 		g.fillOval(x- 10, y- 50, 10, 10); 
-		g.fillOval(x+ 10, y- 50, 10, 10); 
+		g.fillOval(x+ 10, y- 50, 10, 10);
+		// dress
+		g.setColor(dressColor);
+		int x1 [] = {x, x- 50, x + 50}; 
+		int y1 []= {y+ 30, y + 200, y + 200};
+		g.fillPolygon(x1, y1, 3);
+
 		
 		
 	}
